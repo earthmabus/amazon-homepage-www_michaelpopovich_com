@@ -2,15 +2,13 @@
 Instructions from:
 - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/getting-started-secure-static-website-cloudformation-template.html
 
-After deployment, you'll get errors if you simply visit https://www.michaelpopovich.com.  To get the site to load properly, you'll need to update the CSP for the CloudFront distribution with the following:
+After deployment, your browser will get errors when they https://www.michaelpopovich.com (inspect the page -- fonts will not have been downloaded, inline script in the index.html won't be run, and selfie won't be visible).  To get the site to load properly, you'll need to update the CSP for the CloudFront distribution with the following:
 - default-src 'none'; 
 - img-src 'self'; 
 - script-src 'self' 'sha256-A1FYnT1QjW1PWpdCVyoIX2FsLqzmQevMHcpeuU5rU/w='; 
 - style-src 'self' https://fonts.googleapis.com; 
 - object-src 'none';
 - font-src 'self' https://fonts.gstatic.com data:
-
-So that the index.hml file will work properly (i.e., allow fonts can be downloaded from google and allow the inline <script> in the index.html to be run).
 
 My index.html came from my other project: https://github.com/earthmabus/python-flask-name-card
 
