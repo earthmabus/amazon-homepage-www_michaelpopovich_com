@@ -2,7 +2,7 @@
 Instructions from:
 - https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/getting-started-secure-static-website-cloudformation-template.html
 
-After deployment, your browser will get errors when they https://www.michaelpopovich.com (inspect the page -- fonts will not have been downloaded, inline script in the index.html won't be run, and selfie won't be visible).  To get the site to load properly, you'll need to update the CSP (in the *Response Headers* in the *Policy* associated) with the newly created **CloudFront** distribution with the following:
+After deployment, your browser will get errors when visiting https://www.michaelpopovich.com (inspect the page to see the errors -- fonts will not have been downloaded, inline script in the index.html won't execute, and picture/selfie won't be visible on the page).  To get the site to load properly, update the CSP (in the *Response Headers* in the *Policy* associated) within the newly created **CloudFront** distribution with the following content:
 ```
 default-src 'none'; 
 img-src 'self'; 
@@ -11,6 +11,7 @@ style-src 'self' https://fonts.googleapis.com;
 object-src 'none';
 font-src 'self' https://fonts.gstatic.com data:
 ```
+They key changes to note here are the **sha256-A1FYnT1QjW1PWpdCVyoIX2FsLqzmQevMHcpeuU5rU/w=** to allow the inline script to execute and the addition of the fonts URLs.
 
 My index.html came from my other project: https://github.com/earthmabus/python-flask-name-card
 
