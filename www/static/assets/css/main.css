@@ -704,7 +704,7 @@
 		position: relative;
 		max-width: 100%;
 		min-width: 27em;
-		padding: 4.5em 3em 3em 3em ;
+		padding: 2.25em 3em 1.5em 3em ;
 		background: #ffffff;
 		border-radius: 4px;
 		cursor: default;
@@ -754,7 +754,7 @@
 			#main {
 				min-width: 0;
 				width: 100%;
-				padding: 4em 2em 2.5em 2em ;
+				padding: 2em 2em 1.25em 2em ;
 			}
 
 				#main .avatar:before {
@@ -771,6 +771,86 @@
 			-ms-transform: rotateX(15deg);
 			transform: rotateX(15deg);
 		}
+
+
+	#cards {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-align-items: stretch;
+		-webkit-align-items: stretch;
+		-ms-align-items: stretch;
+		align-items: stretch;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		width: 27em;
+		max-width: 100%;
+		gap: 1.25em;
+	}
+
+	#resume-card {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		min-height: 13em;
+		background: #ffffff;
+		border-radius: 4px;
+		box-shadow: 0 0.75em 2.5em rgba(0, 0, 0, 0.18);
+		text-decoration: none;
+		transform: translateY(0);
+		transition: box-shadow 0.25s ease, transform 0.25s ease;
+	}
+
+		#resume-card:hover {
+			box-shadow: 0 1em 3em rgba(0, 0, 0, 0.26);
+			transform: translateY(-0.2em);
+		}
+
+		#resume-card img {
+			display: block;
+			width: 100%;
+			height: 13em;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		#resume-card:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 48%;
+			background: linear-gradient(to top, rgba(16, 25, 43, 0.92), rgba(16, 25, 43, 0));
+		}
+
+		#resume-card .resume-card-label {
+			position: absolute;
+			left: 1.4em;
+			right: 1.4em;
+			bottom: 1.15em;
+			z-index: 1;
+			display: block;
+			color: #ffffff;
+			text-align: left;
+		}
+
+			#resume-card .resume-card-label strong {
+				display: block;
+				font-size: 1.15em;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+			}
+
+			#resume-card .resume-card-label span {
+				display: block;
+				margin-top: 0.25em;
+				font-size: 0.85em;
+				letter-spacing: 0.08em;
+			}
 
 /* Footer */
 
@@ -816,10 +896,10 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		-moz-justify-content: space-between;
-		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
-		justify-content: space-between;
+		-moz-justify-content: flex-start;
+		-webkit-justify-content: flex-start;
+		-ms-justify-content: flex-start;
+		justify-content: flex-start;
 		-moz-flex-direction: column;
 		-webkit-flex-direction: column;
 		-ms-flex-direction: column;
@@ -830,7 +910,7 @@
 		perspective: 1000px;
 		position: relative;
 		min-height: 100%;
-		padding: 1.5em;
+		padding: 3vh 1.5em 1.5em 1.5em;
 		z-index: 2;
 	}
 
@@ -838,15 +918,11 @@
 			z-index: 1;
 		}
 
-		#wrapper:before {
-			content: '';
-			display: block;
-		}
 
 		@media screen and (max-width: 360px) {
 
 			#wrapper {
-				padding: 0.75em;
+				padding: 1.5vh 0.75em 0.75em 0.75em;
 			}
 
 		}

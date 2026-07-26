@@ -13,25 +13,21 @@
 	#wrapper {
 		@include vendor('display', 'flex');
 		@include vendor('align-items', 'center');
-		@include vendor('justify-content', 'space-between');
+		@include vendor('justify-content', 'flex-start');
 		@include vendor('flex-direction', 'column');
 		@include vendor('perspective', '1000px');
 		position: relative;
 		min-height: 100%;
-		padding: _size(element-margin);
+		padding: 3vh _size(element-margin) _size(element-margin) _size(element-margin);
 		z-index: 2;
 
 		> * {
 			z-index: 1;
 		}
 
-		&:before {
-			content: '';
-			display: block;
-		}
 
 		@include breakpoint(xxsmall) {
-			padding: (_size(element-margin) * 0.5);
+			padding: 1.5vh (_size(element-margin) * 0.5) (_size(element-margin) * 0.5) (_size(element-margin) * 0.5);
 		}
 
 		body.is-ie & {
