@@ -44,6 +44,26 @@
 	var portraitButton = document.getElementById('theme-advance');
 	var timerId = null;
 
+	/*
+	 * CSP-safe page reveal.
+	 *
+	 * The original template removed "is-loading" from an inline <script> in
+	 * index.html. A strict Content-Security-Policy correctly blocks that inline
+	 * script, which leaves #cards and #footer at opacity: 0 even though they are
+	 * present and clickable.
+	 *
+	 * Keep the initialization in this external file instead. Because themes.js
+	 * is loaded at the end of <body>, the DOM is already available and the card
+	 * can be revealed immediately without waiting for large background images.
+	 */
+	function revealPage() {
+		body.classList.remove('is-loading');
+
+		if (navigator.userAgent.match(/(MSIE|rv:11\.0)/)) {
+			body.classList.add('is-ie');
+		}
+	}
+
 	function applyTheme(theme) {
 		body.setAttribute('data-theme', theme);
 		if (themeColorMeta && themeColors[theme]) {
@@ -71,6 +91,9 @@
 		// A manual click gets a complete 30 seconds before the next automatic change.
 		scheduleNextTheme();
 	}
+
+	// Reveal the interface from this CSP-approved external script.
+	revealPage();
 
 	// Warm all theme imagery once before rotation begins.
 	preloadThemeImages();

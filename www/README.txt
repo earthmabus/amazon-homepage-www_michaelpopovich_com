@@ -45,3 +45,17 @@ result, for example:
 Use shorter caching for index.html and invalidate/version static assets when they
 change. With those headers, each visitor should normally download each theme image
 once, then reuse the browser cache throughout the session and on later visits.
+
+CloudFront CSP compatibility fix
+--------------------------------
+The HTML5 UP template previously used an inline script in index.html to remove
+the body "is-loading" class after page load. With a strict CloudFront
+Content-Security-Policy that blocks inline JavaScript, that script never ran.
+The card and footer therefore remained in the DOM but stayed at opacity: 0.
+
+This replacement moves that initialization into static/assets/js/themes.js,
+which is already loaded as an external script allowed by the site's CSP.
+The interface is revealed immediately when themes.js executes rather than
+waiting for all large theme images to finish loading.
+
+No CSP relaxation such as 'unsafe-inline' is required.
