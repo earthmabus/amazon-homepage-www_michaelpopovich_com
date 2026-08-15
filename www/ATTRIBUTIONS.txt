@@ -1,0 +1,30 @@
+Theme image attributions — v7
+
+Water
+-----
+"Ocean water.jpg" by apasciuto.
+Source: Wikimedia Commons / Flickr.
+License: Creative Commons Attribution 2.0 Generic (CC BY 2.0).
+Original: 5,856 x 3,904.
+Modified here by cropping to an all-water 16:9 composition, resizing, and mild color/contrast adjustment.
+
+Nature
+------
+"Maligne Lake Tour Boat 'Mary Schaffer' -- Jasper National Park Alberta (CA) September 2019 (49124595281).jpg"
+by Ron Cogswell.
+Source: Wikimedia Commons / Flickr.
+License: Creative Commons Attribution 2.0 Generic (CC BY 2.0).
+Original: 6,000 x 4,000.
+Modified here by proportional 16:9 cropping/resizing and mild color/contrast adjustment.
+
+City
+----
+"High-rise buildings of Manhattan during sunset.jpg" by Ben o'bro.
+Source: Wikimedia Commons / Unsplash.
+License: CC0 1.0 Universal Public Domain Dedication.
+Original: 5,472 x 3,648.
+Modified here by proportional 16:9 cropping/resizing and mild color/contrast adjustment.
+
+Dark Geometric and Wave Minimal
+-------------------------------
+Original vector/CSS artwork included with this site.
